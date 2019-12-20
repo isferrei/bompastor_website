@@ -104,7 +104,7 @@ var CopyIcon = (function() {
 'use strict';
 
 var FormControl = (function() {
-
+ 
   // Variables
 
   var $input = $('.form-control');
