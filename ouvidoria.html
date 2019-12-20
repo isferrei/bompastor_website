@@ -1,0 +1,96 @@
+<html>
+    <head>
+
+    <title>Ouvidoria | Associação de moradores - Bom Pastor</title>
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" type="text/css"  href="Css/style.css" />
+
+    <script src="scripts/DD_belatedPNG_0.0.7a.js" type="text/javascript"></script> 
+<!--[if lte IE 6]>
+<script type="text/javascript">
+ DD_belatedPNG.fix('img, #wrap-header, #quick-contact, #right, ul');
+</script>
+<![endif]-->
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+       $("li a[href='"+location.href.substring(location.href.lastIndexOf("/")+1,255)+"']").addClass("diferente");
+});
+</script>
+
+    </head>
+
+    <body>
+        <div id="menu">
+        <ul>   
+            <li><a href="quem_somos.html" class="quem_somos">Quem somos</a></li>
+            <li><a href="estatuto.html" class="estatuto">Estatuto</a></li>
+            <li><a href="noticias.html"  class="noticias">Notícias</a></li>
+            <li><a href="parceiros.html"  class="parceiros">Parceiros</a></li>
+            <li id="logo"><a href="index.html"><img src="img/PNG/logo-cabecalho.png" alt="" ></a></li>
+            <li id="button1"><a href="ouvidoria.html" class="but1">Ouvidoria</a></li>
+            <li id="button2"><a href="associese.html" class="but2">Associe-se</a></li>
+        </ul>         
+    </div>
+
+    <div id="conteudo04">
+           
+            <p class="title05" style="left: 32%;">Ouvidoria do Bairro</p>
+
+             <form method="post" action="functions/processa.php">
+                <input type="text" name="nome" id="nome" placeholder="Nome" class="nome01">
+                <input type="text" name="email" id="email" placeholder="Email" class="email02">
+                <input type="text" name="telefone" id="telefone" placeholder="Telefone" class="telefone01">
+                <input type="text" name="assunto" id="assunto" placeholder="Assunto" class="assunto01">
+                <textarea name="mensagem" id="mensagem" placeholder="Digite sua mensagem" rows="100" cols="100" maxlength="100000" class="textarea02"></textarea>
+                <input type="submit" id="button04" name="enviar" value="Enviar">
+            </form>
+
+            <div id="bg04">
+            </div>
+            
+            <div id="bg03">
+                <p class="title02">NOTÍCIAS DO BAIRRO</p>
+                <div id="carousel01">
+                </div>
+            </div>
+            <div id="footer">
+                <p class="title03">PARCEIROS DO BAIRRO</p>
+                <div id="line"></div>
+            </div>
+
+<div id="sec13">  
+
+
+        <div id="rodape">
+
+            <div id="box02">
+                <p class="texto03">Faça parte atuante em prol ao nosso bairro, receba nossos comunicados em primeira mão!</p>
+                <input type="email" name="email" id="email" class="email01" placeholder="Digite aqui seu e-mail...">
+            </div>
+            
+            <div id="logo_bairro"><img src="img/PNG/logo-rodape.png"></div>
+            
+            <ul id="nav">   
+                <li id="quem_somos_02"><a href="quem_somos.html">Quem somos</a></li>
+                <li id="estatuto_02"><a href="estatuto.html">Estatuto</a></li>
+                <li id="noticias_02"><a href="noticias.html">Notícias</a></li>
+                <li id="parceiros_02"><a href="parceiros.html">Parceiros</a></li>
+                <li id="button3"><a href="ouvidoria.html" class="but3">Ouvidoria</a></li>
+            </ul>
+
+        <div id="copyright">
+            <p class="texto04">Copyright ©2019. Associação de Moradores do Bairro Bom Pastor. Todos os direitos reservados.</p>        
+        </div>
+        
+        <div id="desenvolvedor">
+            <p class="texto04">Desenvolvido por:</p>
+            <div id="logo_plugin"><img src="img/PNG/logoPluginRodape.png" /></div>
+
+        </div>
+    </div>
+</div>
+</div>
+
+    </body>
+</html>
