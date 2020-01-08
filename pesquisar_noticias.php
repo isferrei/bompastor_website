@@ -45,7 +45,7 @@ $(document).ready(function(){
             <div id="sec09">
             <form method="post" action="pesquisar_noticias.php">
                 <div class="search01">
-                <input type="txt" placeholder="Encontre uma notícia..." name="pesquisar">
+                <input type="txt" placeholder="Encontre uma notícia..." name="txtparametro">
                 <button><img src="img/SVG/magnifying-glass.svg"></button>
                 </div>
             </form>
@@ -60,22 +60,27 @@ $(document).ready(function(){
             <a href="#" style=" text-decoration:none;"><div id="box07"><div id="textbox01"><p class="texto08">Eventos</p></div></div></a>
             <a href="#" style=" text-decoration:none;"><div id="box08"><div id="textbox01"><p class="texto08">História</p></div></div></a>
     
-            
             <?php
-			$sql = $conn->prepare("SELECT * FROM noticias");
-			$sql->execute();
-			$get = $sql->get_result();
-			$total = $get->num_rows;
-			if($total > 0){
-				while($dados = $get->fetch_array()){
-	?>
-            
+
+            $pesquisar = $_POST['pesquisar'];
+            $result = "SELECT * FROM noticias WHERE categoria LIKE '%$pesquisar%' LIMIT 5";
+            $resultado = mysqli_query($conn, $result);
+
+            if($resultado = '0')
+            {
+                echo "<script language='javascript' type='text/javascript'> alert('Estatuto publicado com sucesso!');window.location.href='gerenciar_estatuto.php';</script>";
+            }else{
+
+            while($dados = mysqli_fetch_array($resultado)){
+                
+            ?>
+
             <table class="post-content">
             <tr>
             <td> <?php 
                 echo "<a href='post.php?id=$dados[id]' style='text-decoration:none;'>";
                 ?>
-            <div class="title10"><?php echo $dados['titulo'];?></h4>
+            <div class="title10"><?php echo $dados['titulo'];?></div>
             </a></td>
             </tr>
             <tr>
@@ -95,7 +100,12 @@ $(document).ready(function(){
             </div> 
 		    </div>
             </div>
-                </table><?php }}?>  
+            </table>
+            
+    <?php 
+    }}        
+    ?>  
+
 </div>
             
 <div id="sec24">  

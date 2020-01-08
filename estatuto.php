@@ -1,22 +1,28 @@
+<?php
+    include("functions/conexao.php");
+
+       $sql = "SELECT * FROM estatuto";
+
+       $resultado = mysqli_query($conn, $sql);
+       $dados = mysqli_fetch_array($resultado);
+   
+?>
+
+
 <html>
     <head>
 
-    <title>Página não encontrada | Associação de moradores - Bom Pastor</title>
+    <title>Estatuto | Associação de moradores - Bom Pastor</title>
     <meta charset="utf-8"/>
     <link rel="stylesheet" type="text/css"  href="Css/style.css" />
-
+    
     <script src="scripts/DD_belatedPNG_0.0.7a.js" type="text/javascript"></script> 
-<!--[if lte IE 6]>
-<script type="text/javascript">
- DD_belatedPNG.fix('img, #wrap-header, #quick-contact, #right, ul');
-</script>
-<![endif]-->
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
-<script type="text/javascript">
-$(document).ready(function(){
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function(){
        $("li a[href='"+location.href.substring(location.href.lastIndexOf("/")+1,255)+"']").addClass("diferente");
-});
-</script>
+    });
+    </script>
     </head>
 
     <body>
@@ -26,36 +32,53 @@ $(document).ready(function(){
             <li><a href="estatuto.php" class="estatuto">Estatuto</a></li>
             <li><a href="noticias.php"  class="noticias">Notícias</a></li>
             <li><a href="parceiros.html"  class="parceiros">Parceiros</a></li>
-            <li id="logo"><a href="index.php"><img src="img/PNG/logo-cabecalho.png" alt="" ></a></li>
+            <li id="logo"><a href="index.html"><img src="img/PNG/logo-cabecalho.png" alt="" ></a></li>
             <li id="button1"><a href="ouvidoria.html" class="but1">Ouvidoria</a></li>
             <li id="button2"><a href="associese.html" class="but2">Associe-se</a></li>
         </ul>         
     </div>
 
-    <div id="conteudo04">
-           
-            <h3 class="title07">OPS!</h3>
-            <div id="sec14">
-            <p class="texto02"><b>Não encontramos o que você buscou!</b></p>
-            <div id="sec15"><p class="texto09"><b>Quer falar com a gente?<a href="ouvidoria.html" class="link03"> Clique aqui.</div></a></b></p></div>
+    <div id="conteudo03">
+            <p class="title04">estatuto do bairro bom pastor</p>
+            <div id="sec03">
+            <textarea name="estatuto" class="textarea" rows="900" cols="800" maxlength="100000"><?php echo$dados['documento']?></textarea>
             </div>
-
-            <div id="bg04">
+            <a href="#">
+            <div id="box03">
+            <img src="img/PNG/download.png" class="icon01">
+            <div id="sec04">
+            <p class="texto06"><b>Baixe o estatuto</b> do bairro Bom Pastor</p>
             </div>
-            
-            <div id="bg03">
-                <p class="title02">NOTÍCIAS DO BAIRRO</p>
-                <div id="carousel01">
-                </div>
             </div>
-            <div id="footer">
-                <p class="title03">PARCEIROS DO BAIRRO</p>
-                <div id="line"></div>
+            </a>
+            <a href="ouvidoria.html">
+            <div id="box04">
+            <img src="img/PNG/iconDoubt.png" class="icon02">
+            <div id="sec05">
+            <p class="texto06">Dúvidas, sugestões ou reclamações Fale na Ouvidoria</p>
             </div>
+            </div>
+            </a>
+        </div>
 
-<div id="sec12">  
 
 
+<div id="sec06">
+
+    <div id="bg04">
+    </div>
+
+        <div id="bg03">
+            <p class="title02">NOTÍCIAS DO BAIRRO</p>
+            <div id="carousel01">
+            </div>
+        </div>
+        <div id="footer">
+            <p class="title03">PARCEIROS DO BAIRRO</p>
+            <div id="line"></div>
+        </div>
+
+<div id="sec12">
         <div id="rodape">
 
             <div id="box02">
@@ -71,18 +94,18 @@ $(document).ready(function(){
                 <li id="noticias_02"><a href="noticias.html">Notícias</a></li>
                 <li id="parceiros_02"><a href="parceiros.html">Parceiros</a></li>
                 <li id="button3"><a href="ouvidoria.html" class="but3">Ouvidoria</a></li>
-            </ul>
+            </ul> 
 
         <div id="copyright">
             <p class="texto04">Copyright ©2019. Associação de Moradores do Bairro Bom Pastor. Todos os direitos reservados.</p>        
         </div>
-        
+
         <div id="desenvolvedor">
             <p class="texto04">Desenvolvido por:</p>
             <div id="logo_plugin"><img src="img/PNG/logoPluginRodape.png" /></div>
-
         </div>
     </div>
+</div>
 </div>
 </div>
 

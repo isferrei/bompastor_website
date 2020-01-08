@@ -25,10 +25,10 @@ $(document).ready(function(){
         <div id="menu">
         <ul>   
             <li><a href="quem_somos.html" class="quem_somos">Quem somos</a></li>
-            <li><a href="estatuto.html" class="estatuto">Estatuto</a></li>
-            <li><a href="noticias.html"  class="noticias">Notícias</a></li>
+            <li><a href="estatuto.php" class="estatuto">Estatuto</a></li>
+            <li><a href="noticias.php"  class="noticias">Notícias</a></li>
             <li><a href="parceiros.html"  class="parceiros">Parceiros</a></li>
-            <li id="logo"><a href="index.html"><img src="img/PNG/logo-cabecalho.png" alt="" ></a></li>
+            <li id="logo"><a href="index.php"><img src="img/PNG/logo-cabecalho.png" alt="" ></a></li>
             <li id="button1"><a href="ouvidoria.html" class="but1">Ouvidoria</a></li>
             <li id="button2"><a href="associese.html" class="but2">Associe-se</a></li>
         </ul>         
@@ -52,6 +52,9 @@ $(document).ready(function(){
        $resultado = mysqli_query($conn, $sql);
        $dados = mysqli_fetch_array($resultado);
     }
+
+    setlocale(LC_TIME, 'pt_BR', 'pt_BR.utf-8', 'pt_BR.utf-8', 'portuguese');
+date_default_timezone_set('America/Sao_Paulo');
 ?>
             <span class="textcategoria"><?php echo $dados['categoria'];?></span>
             <div id="sec17">
@@ -59,7 +62,7 @@ $(document).ready(function(){
             </div>
 
             <div id="sec18">
-            <p class="texto10">Por: <?php echo $dados['id_admin'];?> <br>Data: <?php echo $dados['data'];?></p>
+            <p class="texto10">Por: <?php echo $dados['id_admin'];?> <br>Data: <?php echo strftime(' %d de %B de %Y', strtotime($dados['data']));?></p>
             </div>
 
             <div id="sec20">
@@ -68,10 +71,15 @@ $(document).ready(function(){
             <a href=""><img src="img/SVG/twitter.svg" class="twitter"></a> 
             <a href=""><img src="img/SVG/whatsapp.svg" class="whatsapp"></a> 
             </div>
-            
+
+            <div id="line03"></div>
+
+            <div class="card_img02">
             <img src="Sistema/pags/uploads/<?php echo $dados['imagem'];?>" class="mainphoto">
+            </div>
+
             <div id="sec21">
-            <textarea name="noticia" class="noticia01" rows="20" cols="150" maxlength="10000" class="textarea02"><?php echo $dados['noticia'];?></textarea>
+            <textarea name="noticia" class="noticia01" rows="20" cols="120" maxlength="10000" class="textarea02"><?php echo $dados['noticia'];?></textarea>
             </div>
             </div>
 </div>
