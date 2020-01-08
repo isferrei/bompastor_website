@@ -60,12 +60,11 @@
 
 <div id="sec02">
 <form method="POST" enctype="multipart/form-data">
-    <br>
-    <br>
 <table>         
-            <tr><div id="sec03"><p class="texto01">Insira uma imagem à sua galeria:</p></div>
-            <td><input type="file" name="imagem" class="imagem02"></td>
-            <td><input type="submit" class="button04" name="insert" value="Inserir"></td>
+            <tr><td><div id="sec05"><p class="texto01">Insira uma imagem à sua galeria:</p></div>
+            <input type="file" name="imagem" class="imagem02">
+            <input type="submit" class="button04" name="insert" value="Inserir"></td>
+            
 </tr>
 </table>
 </form>

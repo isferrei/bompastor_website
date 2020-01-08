@@ -59,45 +59,47 @@
 			$total = $get->num_rows;
 			if($total > 0){
 				while($dados = $get->fetch_array()){
-		?>
+        ?>
+        
         <table>
             <div class="post-content">
-            <tr>
-            <td>
-            <div class="title02"><?php echo $dados['titulo'];?></h4>
-            </td>
-            </tr>
-            <tr>
-            <td>
-            <span class="texto04"><i class="fas fa-user"></i> <?php echo $dados['id_admin'];?> - <i class="far fa-clock"></i> <?php echo $dados['data'];?></span>
-            </td>
-            <div class="media">
-            </tr><br>
+            
             <tr><td>
-            <img src="uploads/<?php echo$dados['imagem']?>" class="miniatura">
-            </td>
-            <td>
+            <div class="title02"><?php echo $dados['titulo'];?></div>
+            </td></tr>
+
+            <tr><td>
+            <span class="texto04"><i class="fas fa-user"></i> <?php echo $dados['id_admin'];?> - <i class="far fa-clock"></i> <?php echo date('d/m/Y', strtotime($dados['data']));?></span>
+            </td></tr>
+            
+            <tr><td>
+            <div class="card_img">
+            <img src="uploads/<?php echo$dados['imagem'];?>" class="miniatura">
+            </div></td>
+            
+            <div id="media">
+            <td> 
             <?php 
                 echo "<a href='post.php?id=$dados[id]'"; 
             ?>
             <div class="button05">Visualizar</div>
-            </a>
-            </td>
+            </a></td>
+           
             <td>
             <?php 
                 echo "<a href='../lib/excluir_noticia.php?txtcodigo=$dados[id]'"; 
             ?>
             <div class="button06">Excluir</div>
-            </a>    
-            </td>
-            </tr>
-            </div>
-            </div>
-            </div> 
-		    </div>
-            </div><?php }}?>  
+            </a></td></tr>   
             
-        </table>
+            </div>
+            </div>
+            </div>
+            </table>            
+
+            <?php }}?>  
+            </div>      
+        
           
 
         </body>

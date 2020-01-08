@@ -1,4 +1,15 @@
 <?php include_once("../lib/includes.php"); ?>
+
+<?php
+    include("../lib/conexao.php");
+
+       $sql = "SELECT * FROM estatuto";
+
+       $resultado = mysqli_query($conn, $sql);
+       $dados = mysqli_fetch_array($resultado);
+   
+?>
+
 <html>
 <head>
 
@@ -58,8 +69,8 @@ Estatuto do bairro
     <br>
     <br>
 <table>         
-            <tr><div id="sec03"><p class="texto01">Insira o estatuto abaixo:</p></div>  
-            <td><textarea name="documento" class="noticia01" rows="20" cols="120" maxlength="10000" class="textarea02"></textarea></td>
+            <tr><div id="sec05"><p class="texto01">Insira o estatuto abaixo:</p></div>  
+            <td><textarea name="documento" class="noticia01" value="<?php echo$dados['documento']?>" rows="20" cols="90" maxlength="50000" class="textarea02"><?php echo$dados['documento']?></textarea></td>
 </tr>
 <tr>
         <td><input type="submit" class="button01" name="publicar" value="publicar"></td>
@@ -75,21 +86,13 @@ Estatuto do bairro
 $connect = mysqli_connect("localhost", "root", "", "bompastor");  
 if(isset($_POST['publicar'])) {
 
-    $id_admin = $_SESSION['nome'];
-    $titulo = $_POST['titulo'];
-    $categoria = $_POST['categoria'];
-    $noticia = $_POST['noticia'];
+    $documento = $_POST['documento'];
 
-    $imagem = $_FILES['imagem']['name'];
-    $filetmpname = $_FILES['imagem']['tmp_name'];
-   
-    $folder = 'uploads/';
-    move_uploaded_file($filetmpname, $folder.$imagem);
-
-    $sql = "INSERT INTO noticias (id_admin, titulo, categoria, data, imagem, noticia) VALUES ('$id_admin', '$titulo', '$categoria', NOW(), '$imagem', '$noticia')";
+    $sql = "INSERT INTO estatuto (documento) VALUE ('$documento')";
     $qry = mysqli_query($conn, $sql);
     if( $qry) {
-    echo "</br>Notícia publicada!";
+    echo "<script language='javascript' type='text/javascript'> alert('Estatuto publicado com sucesso!');window.location.href='gerenciar_estatuto.php';</script>";
+    
     }
     }
 ?>  

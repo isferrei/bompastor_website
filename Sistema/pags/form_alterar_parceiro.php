@@ -17,7 +17,7 @@
 <html>
 <head>
 
-<title>Parceiros | Gerenciador Bairro Bom Pastor</title>
+<title>Alterar Parceiro | Gerenciador Bairro Bom Pastor</title>
 
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -75,12 +75,12 @@
 <br>
 <br>
 <table>         
-            <tr><div id="sec03"><p class="texto01">Nome do parceiro:</p></div>
-            <td><input type="text" name="nome" class="titulo02" value="<?php echo$dados['nome']?>"></td></tr>  
-            <tr><div id="sec04"><p class="texto01">Logo do parceiro:</p></div></tr>
-            <tr><td><input type="file" name="imagem" class="imagem02" value="<?php echo$dados['imagem']?>"></td></tr>
-            <tr><td><div id="sec09"><p class="texto01">Link para a página do parceiro:</p></td>
-            <td><input type="text" name="link" class="link01" value="<?php echo$dados['link']?>"></td></tr>  
+            <tr><td><div id="sec03"><p class="texto01">Nome do parceiro:</p></div>
+            <input type="text" name="nome" class="titulo02" value="<?php echo$dados['nome']?>"></td></tr>  
+            <tr><td><div id="sec05"><p class="texto01">Logo do parceiro:</p></div>
+            <input type="file" name="imagem" class="imagem02" value="<?php echo$dados['imagem']?>"></td></tr>
+            <tr><td><div id="sec09"><p class="texto01">Link para a página do parceiro:</p>
+            <input type="text" name="link" class="link01" value="<?php echo$dados['link']?>"></td></tr>  
         <tr>
         <td><input type="hidden" name='id' value=<?php echo $dados['id']; ?>>
             <input type="submit" class="button08" name="alterar" value="Salvar mudança" action="../lib/alterar_parceiro.php" ></td>

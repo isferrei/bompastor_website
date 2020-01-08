@@ -83,12 +83,12 @@
             </div>    
                 <div  class="excluir01" style=" text-decoration: none;">
                 <?php 
-                echo "<a href='../lib/excluir_parceiro.php?txtcodigo=$dados[id]'"; 
+                echo "<a href='../lib/excluir_parceiro.php?txtcodigo=$dados[id]'>"; 
                 ?><i class="fas fa-trash"></i></a>
             </div>
                 <div class="alterar01" style="text-decoration: none;">
                 <?php 
-                echo "<a href='form_alterar_parceiro.php?id=$dados[id]'"; 
+                echo "<a href='form_alterar_parceiro.php?id=$dados[id]'>"; 
                 ?><i class="fas fa-user-edit"></i></a>
                 </div>
             <?php

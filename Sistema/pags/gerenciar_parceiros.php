@@ -57,15 +57,16 @@
 
 <div id="sec02">
 <form method="POST" enctype="multipart/form-data">
-<br>
-<br>
+
 <table>         
-            <tr><div id="sec03"><p class="texto01">Insira o nome do parceiro abaixo:</p></div>
-            <td><input type="text" name="nome" class="titulo02" placeholder="Digite o nome de seu parceiro"></td></tr>  
-            <tr><div id="sec04"><p class="texto01">Insira a logo de seu parceiro:</p></div></tr>
-            <tr><td><input type="file" name="imagem" class="imagem02"></td></tr>
-            <tr><td><div id="sec09"><p class="texto01">Insira um link para a página de seu parceiro:</p></td>
-            <td><input type="text" name="link" class="link01" placeholder="https://www.parceiro..."></td></tr>  
+            <tr><td>
+            <div id="sec05"><p class="texto01">Insira o nome do parceiro abaixo:</p></div>
+            <input type="text" name="nome" class="titulo02" placeholder="Digite o nome de seu parceiro">
+            </td></tr>  
+            <tr><td><div id="sec05"><p class="texto01">Insira a logo de seu parceiro:</p></div>
+            <input type="file" name="imagem" class="imagem02"></td></tr>
+            <tr><td><div id="sec09"><p class="texto01">Insira um link para a página de seu parceiro:</p>
+            <input type="text" name="link" class="link01" placeholder="https://www.parceiro..."></td></tr>  
         <tr>
         <td><input type="submit" class="cadastrar" name="cadastrar" value="Cadastrar"></td>
         </tr>

@@ -16,7 +16,7 @@
 <html>
 <head>
 
-<title><?php echo gera_titulo("Sistema de Gerenciamento"); ?></title>
+<title>Notícia | Gerenciador Bairro Bom Pastor</title>
 
 <meta charset="utf-8"/>
 <link rel="stylesheet" type="text/css"  href="../Css/style.css" />
@@ -65,21 +65,36 @@
 <div id="sec02">
 <form method="POST" enctype="multipart/form-data" action="../lib/alterar_post.php">
 <table>         
-            <tr><div id="sec03"><p class="texto01">Título:</p></div>
-            <td><input type="text" name="titulo" class="titulo01" value="<?php echo$dados['titulo']?>"></td>
-            <div id="sec05"><p class="texto01">Categoria:</p></div>
-            <td><input type="text" name="categoria" class="categoria02" value="<?php echo$dados['categoria']?>"></td>    
-        </tr>
-                <tr><div id="sec04"><p class="texto01">Imagem principal:</p></div>
-            <td><input type="file" name="imagem" class="imagem01" value="<?php echo$dados['imagem']?>"></td>
-                </tr>
-                <tr>   
-            <td><textarea name="noticia" class="noticia01" value="<?php echo$dados['noticia']?>" rows="20" cols="120" maxlength="10000" class="textarea02"><?php echo$dados['noticia']?></textarea></td>
-                </tr>
-                <tr>
-        <td><input type="hidden" name='id' value=<?php echo $dados['id']; ?>>
+            <tr><td><div id="sec03"><p class="texto01">Título:</p></div>
+            <input type="text" name="titulo" class="titulo01" value="<?php echo$dados['titulo']?>"></td>
+            </tr>
+            
+            <tr>
+            <td><div id="sec05"><p class="texto01">Categoria:</p></div>
+            <select name="categoria" class="categoria01">
+                    <option name="categoria" value=""><?php echo$dados['categoria']?></option>        
+                    <option name="categoria" value="Documentações">Documentações</option>
+                    <option name="categoria" value="Eventos">Eventos</option>
+                    <option name="categoria" value="História">História</option>
+            </select></td>    
+            </tr>
+            
+            <tr><div id="sec04"><p class="texto01">Imagem principal:</p></div>
+            <td>
+            <img src="uploads/<?php echo$dados['imagem']?>" class="miniatura02">
+            <br>
+            <div id="sec08"><p class="texto01">Carregar nova imagem:</p></div>
+            <input type="file" name="imagem" class="imagem03" value="<?php echo$dados['imagem']?>"></td>
+            </tr>
+
+            <tr>   
+            <td><textarea name="noticia" class="noticia01" value="<?php echo$dados['noticia']?>" rows="20" cols="90" maxlength="10000" class="textarea02"><?php echo$dados['noticia']?></textarea></td>
+            </tr>
+            
+            <tr>
+            <td><input type="hidden" name='id' value=<?php echo $dados['id']; ?>>
             <input type="submit" class="button01" name="alterar" value="Salvar mudança" action="../lib/alterar_post.php"></td>
-        <td><a href="../pags/noticias.php"><div class="button07">Cancelar</div></a>  
+            <td><a href="../pags/noticias.php"><div class="button07">Cancelar</div></a>  
                 
             
 </td>
